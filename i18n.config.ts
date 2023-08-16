@@ -19,14 +19,14 @@ export default defineI18nConfig(() => ({
     },
   ],
   messages: {
+    de: {
+      welcome: 'Willkommen'
+    },
     en: {
       welcome: 'Welcome'
     },
     fr: {
       welcome: 'Bienvenue'
-    },
-    de: {
-      welcome: 'Willkommen'
     },
   },
   vueI18n: {
