@@ -25,8 +25,6 @@ export default {
   },
 
   async mounted() {
-    await this.fetchPageData();
-
     const lenis = new Lenis();
 
     lenis.on("scroll", (e) => {
@@ -38,6 +36,10 @@ export default {
     }
 
     requestAnimationFrame(raf);
+  },
+
+  beforeMount() {
+    this.fetchPageData();
   },
 
   methods: {

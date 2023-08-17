@@ -90,6 +90,14 @@ body {
     display: inline-block;
     margin: 10px 0 30px 0;
     position: relative;
+    transition: .3s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--red);
+  border-color: var(--red);
+  transition: .3s ease-in-out;
+  color: var(--background-dark);
 }
 
 .append-icon::after {
