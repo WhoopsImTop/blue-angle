@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   ssr: false,
   nitro: {
-    preset: 'service-worker'
+    preset: 'service-worker',
   },
   devtools: { enabled: true },
   app: {
@@ -18,9 +18,10 @@ export default defineNuxtConfig({
     },
   },
   css: ['@/assets/fonts.css', '@/assets/variables.css'],
-  modules: ['@nuxtjs/i18n'],
+  modules: ['@nuxtjs/i18n', '@nuxt/content'],
+
   i18n: {
-    locales: ['de' ,'en', 'fr'],
+    locales: ['de', 'en', 'fr'],
     defaultLocale: 'de',
   },
 })

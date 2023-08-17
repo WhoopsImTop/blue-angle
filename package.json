@@ -14,5 +14,10 @@
     "@nuxtjs/i18n": "^8.0.0-rc.3",
     "@types/node": "^18.17.3",
     "nuxt": "^3.6.5"
+  },
+  "dependencies": {
+    "@nuxtjs/markdownit": "^2.0.0",
+    "@studio-freight/lenis": "^1.0.19",
+    "markdown-it": "^13.0.1"
   }
 }
