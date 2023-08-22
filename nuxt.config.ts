@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
-  /* nitro: {
+  ssr: true,
+  nitro: {
     preset: 'service-worker',
-  }, */
+  },
   devtools: { enabled: true },
   app: {
     head: {
