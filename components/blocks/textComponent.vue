@@ -85,7 +85,7 @@ import md from "markdown-it";
 import faqComponent from "./faqComponent.vue";
 import getraenkekarteComponent from "./getraenkekarteComponent.vue";
 import formularComponent from "./formularComponent.vue";
-import Macy from "macy";
+/* import Macy from "macy"; */
 export default {
   props: ["component", "index"],
   components: { faqComponent, getraenkekarteComponent, formularComponent },
@@ -162,18 +162,20 @@ export default {
   },
   mounted() {
     if (this.component.imageblock && this.component.imageblock.galery) {
-      var macy = Macy({
-        container: ".image-mansonary",
-        trueOrder: false,
-        waitForImages: false,
-        margin: 24,
-        columns: 2,
-        breakAt: {
-          1200: 2,
-          940: 1,
-          520: 1,
-          400: 1,
-        },
+      document.addEventListener("DOMContentLoaded", () => {
+        var macy = Macy({
+          container: ".image-mansonary",
+          trueOrder: false,
+          waitForImages: false,
+          margin: 24,
+          columns: 2,
+          breakAt: {
+            1200: 2,
+            940: 1,
+            520: 1,
+            400: 1,
+          },
+        });
       });
     }
   },

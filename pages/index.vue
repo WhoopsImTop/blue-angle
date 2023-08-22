@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!loading">
     <blockrenderer
       v-for="(component, index) in pageData[0].components"
       :component="component"
@@ -15,9 +15,15 @@ definePageMeta({
 });
 
 const { locale } = useI18n();
-const pageData = ref(
-  await queryContent("seiten/startseite." + locale.value).find()
-);
+const pageData = ref([]);
+const loading = ref(true);
+
+onBeforeMount(async () => {
+  const data = await queryContent("seiten/startseite." + locale.value).find()
+  console.log(data);
+  pageData.value = data;
+  loading.value = false;
+});
 </script>
 
 <style>

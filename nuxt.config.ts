@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   nitro: {
     preset: 'service-worker',
+    pages: ['/de', '/en', '/fr'],
   },
-  devtools: { enabled: true },
   app: {
     head: {
       title: 'Blue Angle | Nightclub, Striptease, Cabaret in Breisach',
