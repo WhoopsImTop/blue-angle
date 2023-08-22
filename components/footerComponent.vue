@@ -1,14 +1,19 @@
 <template>
   <div class="content-container footer-container">
     <img
-      src="/images/blue-angel-logo-pink.png"
+      src="/blue-angel-stripclub-wortbildmarke.svg"
       alt="blue-angle-logo"
       title="blue-angle-logo"
+      width="170"
       style="margin-top: 10px"
     />
     <div class="link-container">
-      <NuxtLink to="/impressum">Impressum</NuxtLink>
-      <NuxtLink to="/datenschutzerklären">Datenschutzerklärung</NuxtLink>
+      <NuxtLink :to="LocalizePath('/impressum')">{{
+        translations[locale].impressum
+      }}</NuxtLink>
+      <NuxtLink :to="LocalizePath('/datenschutzerklären')">{{
+        translations[locale].datenschutzerklären
+      }}</NuxtLink>
     </div>
     <div class="social-actions">
       <img src="/images/facebook.svg" alt="facebook" width="30" height="30" />
@@ -22,8 +27,28 @@
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { useI18n } from "vue-i18n";
+
+const { locale } = useI18n();
+const translations = {
+  de: {
+    impressum: "Impressum",
+    datenschutzerklären: "Datenschutzerklärung",
+  },
+  en: {
+    impressum: "Imprint",
+    datenschutzerklären: "Privacy Policy",
+  },
+  fr: {
+    impressum: "Mentions légales",
+    datenschutzerklären: "Politique de confidentialité",
+  },
+};
+
+const LocalizePath = (path) => {
+  return `/${locale.value}${path}`;
+};
 </script>
 
 <style>
@@ -55,5 +80,28 @@ export default {};
   justify-content: space-between;
   width: 100px;
   margin: 10px 0;
+}
+
+@media (min-width: 995px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 20px 0;
+  }
+
+  .link-container {
+    width: max-content;
+    justify-self: center;
+    flex-direction: row;
+  }
+
+  .link-container a {
+    margin: 0 10px;
+  }
+
+  .social-actions {
+    justify-self: end;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   nitro: {
     preset: 'service-worker',
   },
@@ -14,14 +14,17 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'stylesheet', href: 'https://use.typekit.net/wik8vol.css' },
+        { rel: 'icon', type: 'image/x-icon', href: '/blue-angel-stripclub-bildmarke.svg' },
       ],
     },
   },
+  spaLoadingTemplate: './app-loading.html',
   css: ['@/assets/fonts.css', '@/assets/variables.css'],
   modules: ['@nuxtjs/i18n', '@nuxt/content'],
 
   i18n: {
     locales: ['de', 'en', 'fr'],
     defaultLocale: 'de',
+    strategy: 'prefix',
   },
 })

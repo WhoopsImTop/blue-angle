@@ -47,7 +47,14 @@ collections:
           widget: 'string',
           i18n: true,
         }
-      - { label: 'Permalink', name: 'slug', widget: 'string', i18n: true, hint: 'Link unter dem der Beitrag aufrufbar sein soll (z.B. mein-beitrag)', required: false}
+      - {
+          label: 'Permalink',
+          name: 'slug',
+          widget: 'string',
+          i18n: true,
+          hint: 'Link unter dem der Beitrag aufrufbar sein soll (z.B. mein-beitrag)',
+          required: false,
+        }
       - label: 'Seiten Komponenten'
         name: 'components'
         widget: 'list'
@@ -94,28 +101,29 @@ collections:
                 collapsed: true
                 i18n: true
                 fields:
-                  - label: "Button Text"
-                    name: "buttonText"
-                    widget: "string"
+                  - label: 'Button Text'
+                    name: 'buttonText'
+                    widget: 'string'
                     required: false
                     i18n: true
-                  - label: "Button Link"
-                    name: "buttonLink"
-                    widget: "string"
+                  - label: 'Button Link'
+                    name: 'buttonLink'
+                    widget: 'string'
                     required: false
                     i18n: true
-                  - label: "Button Icon"
-                    name: "buttonIcon"
-                    widget: "boolean"
+                  - label: 'Button Icon'
+                    name: 'buttonIcon'
+                    widget: 'boolean'
                     required: false
                     i18n: false
-              
+
               - label: 'Bildblock'
                 name: 'imageblock'
                 widget: 'object'
                 i18n: false
                 collapsed: true
                 required: false
+                default: false
                 fields:
                   - {
                       label: 'Bild',
@@ -123,12 +131,14 @@ collections:
                       widget: 'image',
                       required: false,
                       i18n: false,
+                      default: false
                     }
                   - label: 'Gallerie'
                     name: 'galery'
                     widget: 'list'
                     required: false
                     i18n: true
+                    default: false
                     fields:
                       - {
                           label: 'Bild',
@@ -136,12 +146,13 @@ collections:
                           widget: 'image',
                           required: false,
                           i18n: true,
-                        }        
-                  - label: "3D Viewer"
-                    name: "3d-viewer"
-                    widget: "boolean"
+                        }
+                  - label: '3D Viewer'
+                    name: '3d-viewer'
+                    widget: 'boolean'
                     required: false
                     i18n: false
+                    default: false
                   - {
                       label: 'Hintergrundbild',
                       name: 'backgroundImage',
@@ -150,31 +161,119 @@ collections:
                       i18n: false,
                     }
 
+              - label: 'Speisekarte'
+                name: 'speisekarte'
+                widget: 'list'
+                required: false
+                i18n: true
+                default: false
+                fields:
+                  - label: 'Kategorie'
+                    name: 'category'
+                    widget: 'string'
+                    required: false
+                    i18n: true
+
+                  - label: 'Getränke'
+                    name: 'getraenke'
+                    widget: 'list'
+                    required: false
+                    i18n: true
+                    fields:
+                      - label: 'Getränk'
+                        name: 'name'
+                        widget: 'string'
+                        required: false
+                        i18n: true
+                      - label: 'Preis erstes Getränk'
+                        name: 'first_price'
+                        widget: 'string'
+                        required: false
+                        i18n: true
+                      - label: 'Preis zweites Getränk'
+                        name: 'second_price'
+                        widget: 'string'
+                        required: false
+                        i18n: true
+                        
+
               - label: 'FAQ'
                 name: 'faq'
                 widget: 'list'
                 required: false
                 i18n: true
+                default: false
                 fields:
                   - {
-                    label: 'Frage',
-                    name: 'question',
-                    widget: 'string',
-                    required: false,
-                    i18n: true,
-                  }    
+                      label: 'Frage',
+                      name: 'question',
+                      widget: 'string',
+                      required: false,
+                      i18n: true,
+                    }
                   - {
-                    label: 'Antwort',
-                    name: 'answer',
-                    widget: 'markdown',
-                    required: false,
-                    i18n: true,
-                  }    
+                      label: 'Antwort',
+                      name: 'answer',
+                      widget: 'markdown',
+                      required: false,
+                      i18n: true,
+                    }
+                  - {
+                      label: 'geöffnet',
+                      name: 'open',
+                      widget: 'boolean',
+                      required: false,
+                      default: false,
+                    }
+
+              - {
+                  label: 'Map',
+                  name: 'map',
+                  widget: 'object',
+                  required: false,
+                  i18n: false,
+                  collapsed: true,
+                  default: false,
+                  fields:
+                    [
+                      {
+                        label: 'zeige Map',
+                        name: 'showMap',
+                        widget: 'boolean',
+                        required: false,
+                        i18n: false,
+                        default: false,
+                      },
+                      {
+                        label: 'Map',
+                        name: 'map',
+                        widget: 'map',
+                        required: false,
+                        i18n: false,
+                      },
+                      {
+                        label: "Maps API Key",
+                        name: "api_key",
+                        widget: "string",
+                        required: false,
+                        i18n: false,
+                      }
+                    ],
+                }
               
               - {
-                  label: "Container ID",
-                  name: "containerId",
-                  widget: "string",
+                  label: "Kontaktformular",
+                  name: "contactForm",
+                  widget: "boolean",
+                  required: false,  
+                  i18n: false,
+                  default: false,
+                }
+
+              - {
+                  label: 'Container ID',
+                  name: 'containerId',
+                  widget: 'string',
                   required: false,
                 }
 
@@ -225,13 +324,12 @@ collections:
                     required: false
                     i18n: true
                     fields:
-                      
                       - label: 'Link Text'
                         name: 'linkText'
                         widget: 'string'
                         required: false
                         i18n: true
-                      
+
                       - label: 'Link'
                         name: 'link'
                         widget: 'string'
@@ -243,6 +341,7 @@ collections:
                         widget: 'file'
                         required: false
                         i18n: true
+                  - { label: "ID", name: "block_id", widget: "string", required: false, i18n: false }
 
           - label: 'Kompetenzblöcke'
             name: 'competenciesBlocks'
@@ -636,7 +735,14 @@ collections:
       preview: false
     fields:
       - { label: 'Titel', name: 'title', widget: 'string', i18n: true }
-      - { label: 'Permalink', name: 'slug', widget: 'string', i18n: true, hint: 'Link unter dem der Beitrag aufrufbar sein soll (z.B. mein-beitrag)', required: false}
+      - {
+          label: 'Permalink',
+          name: 'slug',
+          widget: 'string',
+          i18n: true,
+          hint: 'Link unter dem der Beitrag aufrufbar sein soll (z.B. mein-beitrag)',
+          required: false,
+        }
       - {
           label: 'Beschreibung',
           name: 'excerpt',
@@ -689,6 +795,7 @@ collections:
     slug: '{{slug}}'
     display_fields: ['titel']
     i18n: true
+    create: true
     editor:
       preview: false
     fields:

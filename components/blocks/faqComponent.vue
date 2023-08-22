@@ -16,18 +16,18 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ["faqs"],
-  methods: {
-    toggleFaq(index) {
-      this.faqs[index].open = !this.faqs[index].open;
-    },
-  },
+<script setup>
+import { ref, toRefs } from "vue";
 
-  mounted() {
-    console.log(this.faqs);
-  },
+const faqProp = defineProps(["faqs"], {
+  type: Array,
+  default: () => [],
+});
+
+const { faqs } = toRefs(faqProp);
+
+const toggleFaq = (index) => {
+  faqs.value[index].open = !faqs.value[index].open;
 };
 </script>
 
@@ -49,7 +49,8 @@ export default {
 .faq__header img {
   transform: rotate(0deg);
   transition: transform 0.3s ease;
-  margin-left: 10px
+  margin-left: 10px;
+  width: auto !important;
 }
 
 .faq-container.active > .faq__header img {

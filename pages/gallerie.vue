@@ -16,7 +16,7 @@ definePageMeta({
 
 const { locale } = useI18n();
 const pageData = ref(
-  await queryContent("seiten/startseite." + locale.value).find()
+  await queryContent("seiten/gallerie." + locale.value).find()
 );
 </script>
 

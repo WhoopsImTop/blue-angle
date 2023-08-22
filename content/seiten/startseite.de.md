@@ -12,7 +12,7 @@ components:
     button:
       buttonText: Anfahrt
       buttonLink: /kontakt
-      buttonIcon: true
+      buttonIcon: false
   - type: blocks
     block:
       - blockTitle: Kostenfreier Eintritt
@@ -28,14 +28,20 @@ components:
         blockTitle: Kontakt
         body: |-
           Gerberstraße 6
+
+
           79206 Breisach am Rhein
 
+
+
           (+49)7667 1070
+
+
           info@blue-angel.de
   - type: contentblock
     mainHeadline: Lean Back & Enjoy
     imageblock:
-      backgroundImage: /bild-11.png
+      backgroundImage: /blue-angel-breisach-008.jpg
   - type: contentblock
     mainHeadline: Striptease & Private Dance
     contentText: >-
@@ -49,7 +55,7 @@ components:
       buttonText: zur Gallerie
       buttonLink: /gallerie
     imageblock:
-      image: /bild-6.png
+      image: /blue-angel-breisach-011.jpg
   - type: contentblock
     mainHeadline: Specials & Private Party
     contentText: Entdecke im Blue Angel nicht nur sinnliche Performances und
@@ -66,7 +72,7 @@ components:
       buttonText: Jetzt Buchen
       buttonLink: /kontakt
     imageblock:
-      image: /bild-7.png
+      image: /blue-angel-breisach-013.jpg
   - type: contentblock
     mainHeadline: Der Stripclub Blue angel
     contentText: Tauche ein in die Welt des Blue Angel - Stripclub und erlebe
@@ -89,6 +95,7 @@ components:
         body: |-
           Montag - Samstag
           21:00 - 05:00 Uhr
+        block_id: oeffnungszeiten
       - icon: /blue-angel-cocktail.svg
         blockTitle: Getränkekarte
         body: >-
@@ -98,6 +105,7 @@ components:
         link:
           linkText: Zu den Getränken
           link: /getraenkekarte
+        block_id: getraenkekarte
       - icon: /blue-angel-specials.svg
         blockTitle: Specials
         body: >-
@@ -119,6 +127,8 @@ components:
     faq:
       - question: Dies ist eine Typische Frage, die der Club hin und wieder bekommt?
         answer: Dies ist eine Typische Frage, die der Club hin und wieder bekommt?
+        open: false
+    containerId: faqs
   - type: contentblock
     mainHeadline: Miete dir deinen Privaten Abend
     contentText: >-
@@ -130,7 +140,7 @@ components:
       buttonText: Räume Buchen
       buttonLink: /kontakt
     imageblock:
-      image: /blue-angel-rooms.png
+      image: /blue-angel-breisach-014.jpeg
   - type: contentblock
     mainHeadline: Wir suchen dich
     contentText: Bereit, die Bühne zu erobern? Der Blue Angel - Stripclub sucht nach
@@ -142,6 +152,6 @@ components:
       buttonText: Jetzt Bewerben
       buttonLink: /kontakt
     imageblock:
-      backgroundImage: /blue-angel-carreer.png
+      backgroundImage: /blue-angel-breisach-009.jpg
 id: 7bfaf87a-bd21-491d-8cdb-df3b21bb73bd
 ---

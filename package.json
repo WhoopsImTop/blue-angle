@@ -18,6 +18,8 @@
   "dependencies": {
     "@nuxtjs/markdownit": "^2.0.0",
     "@studio-freight/lenis": "^1.0.19",
-    "markdown-it": "^13.0.1"
+    "macy": "^2.5.1",
+    "markdown-it": "^13.0.1",
+    "minimasonry": "^1.3.2"
   }
 }
