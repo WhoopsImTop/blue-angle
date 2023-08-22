@@ -87,7 +87,7 @@ const LocalizePath = (path) => {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    padding: 20px 0;
+    padding: 20px;
   }
 
   .link-container {
